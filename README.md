@@ -7,4 +7,4 @@ The API endpoints used were temporary and will likely be disabled, but the logic
 
 The blog interactions are not elegant, but do work.
 
-Delete actions are not visible via URL.
+No POST or DELETE actions are sent via URL parameters.
