@@ -1,0 +1,58 @@
+<html>
+<head>
+<link rel = "stylesheet" type = "text/css" href = "style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="scripts.js"></script>
+</head>
+<body>
+
+<header class="masthead clear">
+  <div class="centered">
+
+    <div class="site-branding">
+      <h1 class="site-title"><a href="index.html">My Blog</a></h1>
+    </div>
+    <!-- .site-title -->
+  </div>
+  <!-- .centered -->
+</header>
+<!-- .masthead -->
+
+<main class="main-area">
+
+  <div id="main-area" class="centered">
+
+    <section id="listofposts" class="cards">
+
+      
+      <article class="card">
+        
+          <div class="card-content">
+            <form>
+            <h2 name="titleofpostform">Title</h2>
+            <input style="width: 400px" id="posttitle" name="posttitle" placeholder=""></input>
+            <h2>Body</h2>
+            <textarea style="width: 400px" id="postbody" rows="10" name="postbody" placeholder=""></textarea>
+            <input type="submit" name="submit" value="Submit"></form>
+            </form>
+          </div>
+      
+      </article>
+
+
+    </section>
+    <!-- .cards -->
+
+  </div>
+  <!-- .centered -->
+</main>
+
+<script>
+
+  getPostJQuery();  
+
+</script>
+
+
+</body>
+</html>
