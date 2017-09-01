@@ -65,3 +65,15 @@ function getPost(id) {
 	xmlhttp.send();
 	
 }
+
+
+//submit form for new post
+  $( "#submitform" ).submit(function( event ) {
+    if ( $( "input:first" ).val() === "correct" ) {
+      $( "span" ).text( "Validated..." ).show().fadeOut( 2000 );
+      return;
+    }
+   
+    $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+    event.preventDefault();
+  });

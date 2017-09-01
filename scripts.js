@@ -15,6 +15,7 @@ function getAllPostsJQuery() {
     $.each( data, function( key, val ) {
       items.push( "<article class='card'><div class='card-content'>"
       	+ "<h2>" + val.title + "</h2>"
+      	+ "<p class='timestamp'>" + val.timestamp + "</p>"
       	+ "<p>" + val.text + "</p><p><a href='post.html?id=" + val.id + "'>edit</a></div></article>" );
       
       //console.log(key + val.title);
@@ -45,22 +46,26 @@ function getPostJQuery() {
 	    var items = [];
 	    myPostTitle = data.title;
 	    myPostBody = data.text;
-	    //console.log(myPostTitle);
+	    myPostId = data.id;
+	    myPostTimestamp = data.timestamp;
+	    //console.log(myPostId);
 	 
+
+
 	    $("#posttitle").val(myPostTitle);
 	    $("#postbody").html(myPostBody);
+	    $("#postid").val(myPostId);
+	    $("#posttimestamp").val(myPostTimestamp);
+
+	    //hide the new post button	
+	    $("#submitnewpostbutton").hide();
 	//}
   		});
+  	} else {
+  		//hide the edit post button	
+	    $("#editpostbutton").hide();
+	    $("#deletepostlink").hide();
   	}
-
-}
-
-//Create and edit posts
-function createPost() {
-
-}
-
-function updatePost() {
 
 }
 
