@@ -26,13 +26,15 @@
     <section id="listofposts" class="cards">
 
       
-      <article class="card">
+      <article class="">
         
-          <div class="card-content">
-            <h2 name="titleofpostform" id="posttitle"></h2>
+          <div class="card-content solo">
+            <h2 id="posttitlestatic"></h2>
+            <p class="timestamp" id="posttimestamp"></p>
             <p id="postbody"></p>
+            <input type="hidden" id="postid">
             <button id="editpostbutton">Edit post</button>
-            <a href="#" id="deletepostlink">Delete post</a>
+            <!--<a href="" id="editpostlink">Edit post</a>-->
           </div>
       
       </article>
@@ -47,59 +49,15 @@
 
 <script>
 
-  getPostJQuery();  
+  getPostJQuery();
 
-  //console.log(hiddenId);
-  //console.log("hidden id field");
-  //console.log(hiddenId);
-    
-  //Submit new post
-  $("#submitnewpostbutton").click(function(){
-    
-    $.post("http://restedblog.herokuapp.com/seth/api/",
-    {
-        //title: "My new post",
-        title: $("#posttitle").val(),
-        text: $("#postbody").val()
-    },
-    function(data, status){
-        //alert("Data: " + data + "\nStatus: " + status);
-        window.location.replace("index.html");
-    });
-  });
+  //Edit post button
+  //$("#editpostlink").attr("href", "edit.html?id=" + $("#postid").val());
 
-  //Edit post
   $("#editpostbutton").click(function(){
     
-    $.post("http://restedblog.herokuapp.com/seth/api/" + $("#postid").val(),
-    {
-        id: $("#postid").val(),
-        title: $("#posttitle").val(),
-        text: $("#postbody").val()
-    },
-    function(data, status){
-        //alert("Data: " + data + "\nStatus: " + status);
-        window.location.replace("index.html");
-        //$("#statusmessage").val("Successfully updated the blog post");
+        window.location.replace("post.html?id=" + $("#postid").val());
     });
-  });
-
-  //Delete post
-  $("#deletepostlink").click(function(){
-    
-    $.ajax({
-      url: "http://restedblog.herokuapp.com/seth/api/" + $("#postid").val(), 
-      type: 'DELETE', 
-      success: function(data, status){
-        //alert("Data: " + data + "\nStatus: " + status);
-        window.location.replace("index.html");
-        //$("#statusmessage").val("Successfully updated the blog post");
-      }
-    });
-  });
-
-
-
 
 </script>
 

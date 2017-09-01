@@ -30,12 +30,13 @@
         
           <div class="card-content">
             <form id="submitform">
-            <h2 name="titleofpostform">Title</h2>
+            <h2 name="titleofpostform">Tell the world!</h2>
+            <p>Title:</p>
             <input style="width: 400px" id="posttitle">
-            <h2>Body</h2>
+            <p>The things you want to say:</p>
             <textarea style="width: 400px" id="postbody" rows="10"></textarea>
-            <input type="" id="postid" readonly="readonly">
-            <input type="" id="posttimestamp" readonly="readonly">
+            <input type="hidden" id="postid" readonly="readonly">
+            <input type="hidden" id="posttimestamp" readonly="readonly">
             </form>
             <span></span>
             <button id="submitnewpostbutton">Create new post</button>
@@ -86,7 +87,7 @@
         text: $("#postbody").val()
     },
     function(data, status){
-        //alert("Data: " + data + "\nStatus: " + status);
+        alert("Status: " + status);
         window.location.replace("index.html");
         //$("#statusmessage").val("Successfully updated the blog post");
     });
@@ -99,15 +100,12 @@
       url: "http://restedblog.herokuapp.com/seth/api/" + $("#postid").val(), 
       type: 'DELETE', 
       success: function(data, status){
-        //alert("Data: " + data + "\nStatus: " + status);
+        alert("Data: " + data);
         window.location.replace("index.html");
         //$("#statusmessage").val("Successfully updated the blog post");
       }
     });
   });
-
-
-
 
 </script>
 

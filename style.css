@@ -80,6 +80,11 @@ body {
 	text-decoration: none;
 }
 
+.card h2 a {
+  font-size: 1.4em;
+  color: #e74c3c;  
+}
+
 .card a:hover {
 	/*box-shadow: 3px 3px 8px hsl(0, 0%, 70%);*/
   text-decoration: underline;
@@ -89,6 +94,9 @@ body {
 	padding: 1.4em;
 }
 
+.solo {
+  /*width: 450px;*/
+}
 .card-content h2 {
 	margin-top: 0;
 	margin-bottom: .5em;

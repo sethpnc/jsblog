@@ -14,7 +14,7 @@ function getAllPostsJQuery() {
     var items = [];
     $.each( data, function( key, val ) {
       items.push( "<article class='card'><div class='card-content'>"
-      	+ "<h2>" + val.title + "</h2>"
+      	+ "<h2><a href='view.html?id=" + val.id + "'>" + val.title + "</a></h2>"
       	+ "<p class='timestamp'>" + val.timestamp + "</p>"
       	+ "<p>" + val.text + "</p><p><a href='post.html?id=" + val.id + "'>edit</a></div></article>" );
       
@@ -53,9 +53,10 @@ function getPostJQuery() {
 
 
 	    $("#posttitle").val(myPostTitle);
+	    $("#posttitlestatic").html(myPostTitle);
 	    $("#postbody").html(myPostBody);
 	    $("#postid").val(myPostId);
-	    $("#posttimestamp").val(myPostTimestamp);
+	    $("#posttimestamp").html(myPostTimestamp);
 
 	    //hide the new post button	
 	    $("#submitnewpostbutton").hide();
