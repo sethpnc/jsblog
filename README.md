@@ -8,3 +8,5 @@ The API endpoints used were temporary and will likely be disabled, but the logic
 The blog interactions are not elegant, but do work.
 
 No POST or DELETE actions are sent via URL parameters.
+
+Hosted at http://sethpackham.com/jsblog/
